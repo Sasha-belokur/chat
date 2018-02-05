@@ -9,29 +9,31 @@
 </head>
 <body>
   <main>
-    <button class="btn addChat-btn">Add chat Window</button>
+    <button class="add-btn"></button>
     <div class="chats-container">
-      <div class="chat">
-        <div class="header">Window №1</div>
-        <ul class="messages-container">
-            <li class="msg">Hello</li>
-            <li class="msg">How are you?</li>
-            <li class="msg own-msg">Fine, thanks</li>
-            <li class="msg">Call me later please honey, I really miss you.....</li>
-            <li class="msg">Hello</li>
-            <li class="msg">How are you?</li>
-            <li class="msg own-msg">Fine, thanks</li>
-            <li class="msg">Call me later please honey, I really miss you.....</li>
-          <li class="msg">Hello</li>
-          <li class="msg">How are you?</li>
-          <li class="msg own-msg">Fine, thanks</li>
-          <li class="msg">Call me later please honey, I really miss you.....</li>
-        </ul>
-        <input class="send-message-input" type="text">
+      <div class="chat-window">
+        <div class="chat-header">Window №1</div>
+        <iframe class="chat-iframe" src="file:///C:/htmlacademy/chat/chat.html" width="300" height="350"></iframe>
+      </div>
+      <div class="chat-window">
+        <div class="chat-header">Window №2</div>
+        <iframe class="chat-iframe" src="file:///C:/htmlacademy/chat/chat.html" width="300" height="350"></iframe>
+      </div>
+      <div class="chat-window">
+        <div class="chat-header">Window №3</div>
+        <iframe class="chat-iframe" src="file:///C:/htmlacademy/chat/chat.html" width="300" height="350"></iframe>
       </div>
     </div>
   </main>
   <script>
+    function Chat() {
+      iframe = document.createElement('iframe');
+      iframe.src = "file:///C:/htmlacademy/chat/chat.html";
+      iframe.width = 300;
+      iframe.height = 350;
+
+      return iframe;
+    } 
   </script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div class="chat">
+    <ul class="messages-container">
+        <li class="msg">Hello</li>
+        <li class="msg">How are you?</li>
+        <li class="msg own-msg">Fine, thanks</li>
+        <li class="msg">Call me later please honey, I really miss you.....</li>
+        <li class="msg">Hello</li>
+        <li class="msg">How are you?</li>
+        <li class="msg own-msg">Fine, thanks</li>
+        <li class="msg">Call me later please honey, I really miss you.....</li>
+      <li class="msg">Hello</li>
+      <li class="msg">How are you?</li>
+      <li class="msg own-msg">Fine, thanks</li>
+      <li class="msg">Call me later please honey, I really miss you.....</li>
+    </ul>
+    <input class="message-input" type="text">
+    <button class="send-btn" type="button">Send</button>
+  </div>
+</body>
+<script>
+  var sendBtn = document.querySelector('.send-btn');
+  var messageInput = document.querySelector('.message-input');
+ 
+  function sendMessage () {
+    console.log(messageInput.value);
+    messageInput.value = "";
+  }
+
+  sendBtn.onclick = sendMessage;
+</script>
+</html>
