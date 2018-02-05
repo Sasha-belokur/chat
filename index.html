@@ -10,30 +10,43 @@
 <body>
   <main>
     <button class="add-btn"></button>
-    <div class="chats-container">
+    <div class="chats-container"></div>
+    <template class="chat-window-tempate">
       <div class="chat-window">
-        <div class="chat-header">Window №1</div>
-        <iframe class="chat-iframe" src="file:///C:/htmlacademy/chat/chat.html" width="300" height="350"></iframe>
+        <header class="chat-header"></header>
+        <iframe class="chat-iframe"></iframe>
       </div>
-      <div class="chat-window">
-        <div class="chat-header">Window №2</div>
-        <iframe class="chat-iframe" src="file:///C:/htmlacademy/chat/chat.html" width="300" height="350"></iframe>
-      </div>
-      <div class="chat-window">
-        <div class="chat-header">Window №3</div>
-        <iframe class="chat-iframe" src="file:///C:/htmlacademy/chat/chat.html" width="300" height="350"></iframe>
-      </div>
-    </div>
+    </template>
   </main>
   <script>
-    function Chat() {
-      iframe = document.createElement('iframe');
-      iframe.src = "file:///C:/htmlacademy/chat/chat.html";
-      iframe.width = 300;
-      iframe.height = 350;
+    var addBtn = document.querySelector('.add-btn');
 
-      return iframe;
+    function ChatWindow() {
+      var template = document.querySelector('.chat-window-tempate').content;
+      var chatWindow = template.cloneNode(true);
+      ChatWindow.counter++;
+
+      chatWindow.querySelector('.chat-header').textContent = 'Window #' + ChatWindow.counter;
+      chatWindow.querySelector('.chat-iframe').src = 'chat.html';
+
+      return chatWindow;
     } 
+
+    ChatWindow.counter = 0;
+
+    function addChatWindow() {
+      var chatsContainer = document.querySelector('.chats-container');
+      var chatWindow = new ChatWindow();
+
+      chatsContainer.appendChild(chatWindow);
+    }
+
+    function addBtnClickHandler() {
+      addChatWindow();
+    }
+
+    addBtn.addEventListener('click', addBtnClickHandler);
+
   </script>
 </body>
 </html>

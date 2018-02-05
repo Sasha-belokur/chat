@@ -20,7 +20,7 @@ body {
   display: block;
   width: 100px;
   height: 100px;
-  margin: 0 auto 50px;
+  margin: 50px auto;
   border: none;
   background-color: #FCC161;
   cursor: pointer;
@@ -64,12 +64,29 @@ body {
 
 .chats-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
   width: 1000px;
-  margin: 100px auto 0;
+  margin: 50px auto;
+}
+
+.chat-window {
+  margin-bottom: 25px;
+  opacity: 0;
+  animation-name: show-msg;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show-chat-window {
+  100% {
+    opacity: 1;
+  }
 }
 
 .chat-iframe {
+  width: 300px;
+  height: 350px;
   border: none;
 }
 
@@ -111,6 +128,7 @@ body {
   border-radius: 10px;
   border-top-left-radius: 0;
   transform: translateX(-50px);
+  overflow-wrap: break-word;
   opacity: 0;
   animation-name: show-msg;
   animation-duration: 0.5s;

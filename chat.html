@@ -10,18 +10,6 @@
 <body>
   <div class="chat">
     <ul class="messages-container">
-        <li class="msg">Hello</li>
-        <li class="msg">How are you?</li>
-        <li class="msg own-msg">Fine, thanks</li>
-        <li class="msg">Call me later please honey, I really miss you.....</li>
-        <li class="msg">Hello</li>
-        <li class="msg">How are you?</li>
-        <li class="msg own-msg">Fine, thanks</li>
-        <li class="msg">Call me later please honey, I really miss you.....</li>
-      <li class="msg">Hello</li>
-      <li class="msg">How are you?</li>
-      <li class="msg own-msg">Fine, thanks</li>
-      <li class="msg">Call me later please honey, I really miss you.....</li>
     </ul>
     <input class="message-input" type="text">
     <button class="send-btn" type="button">Send</button>
@@ -30,11 +18,19 @@
 <script>
   var sendBtn = document.querySelector('.send-btn');
   var messageInput = document.querySelector('.message-input');
+  var messagesContainer = document.querySelector('.messages-container');
  
   function sendMessage () {
-    console.log(messageInput.value);
+    var msg = document.createElement('li');
+
+    msg.textContent = messageInput.value;
+    msg.classList.add('msg', 'own-msg');
+    messagesContainer.appendChild(msg);
+
     messageInput.value = "";
+    console.log(window.top);
   }
+
 
   sendBtn.onclick = sendMessage;
 </script>
