@@ -10,15 +10,15 @@
 <body>
   <main>
     <button class="add-btn"></button>
-    <div class="chats-container"></div>
-    <template class="chat-window-tempate">
-      <div class="chat-window">
-        <header class="chat-header"></header>
+    <template class="chat-window-tempate" style="display: none;">
+      <div class="chat-window draggable">
+        <header class="chat-header draghandle"></header>
         <iframe class="chat-iframe"></iframe>
       </div>
     </template>
   </main>
   <script src="script/send-message.js"></script>
   <script src="script/add-chat.js"></script>
+  <script src="script/drag-n-drop.js"></script>
 </body>
 </html>
