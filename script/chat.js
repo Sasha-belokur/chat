@@ -2,6 +2,7 @@
   var sendBtn = document.querySelector('.send-btn');
   var messageInput = document.querySelector('.message-input');
   var messagesContainer = document.querySelector('.messages-container');
+  var ENTER_KEY_CODE = 13;
 
   function showMessage (message) {
     var msg = document.createElement('li');
@@ -43,7 +44,7 @@
 
   function sendBtnKeyDownHandler (evt) {
 
-    if (messageInput.value.length && evt.keyCode === 13) {
+    if (messageInput.value.length && evt.keyCode === ENTER_KEY_CODE) {
       showMessage({text: messageInput.value, own: true});
       window.sendMessage({text: messageInput.value});
       messageInput.value = "";
