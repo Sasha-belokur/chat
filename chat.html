@@ -15,23 +15,6 @@
     <button class="send-btn" type="button">Send</button>
   </div>
 </body>
-<script>
-  var sendBtn = document.querySelector('.send-btn');
-  var messageInput = document.querySelector('.message-input');
-  var messagesContainer = document.querySelector('.messages-container');
- 
-  function sendMessage () {
-    var msg = document.createElement('li');
-
-    msg.textContent = messageInput.value;
-    msg.classList.add('msg', 'own-msg');
-    messagesContainer.appendChild(msg);
-
-    messageInput.value = "";
-    console.log(window.top);
-  }
-
-
-  sendBtn.onclick = sendMessage;
-</script>
+<script src="script/send-message.js"></script>
+<script src="script/chat.js"></script>
 </html>

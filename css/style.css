@@ -64,7 +64,6 @@ body {
 
 .chats-container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   width: 1000px;
   margin: 50px auto;
@@ -76,6 +75,10 @@ body {
   animation-name: show-msg;
   animation-duration: 0.7s;
   animation-fill-mode: forwards;
+}
+
+.chat-window:not(:nth-child(3n)) {
+  margin-right: 50px;
 }
 
 @keyframes show-chat-window {
@@ -122,7 +125,7 @@ body {
 
 .msg {
   max-width: 200px;
-  margin-top: 5px;
+  margin-top: 10px;
   padding: 7px;
   background-color: #FDF8E5;
   border-radius: 10px;
@@ -142,9 +145,6 @@ body {
   }
 }
 
-.own-msg + .msg {
-  margin-top: 10px;
-}
 
 .own-msg {
   align-self: flex-end;
@@ -154,8 +154,10 @@ body {
   transform: translateX(50px);
 }
 
-.msg + .own-msg {
-  margin-top: 10px;
+.info-msg {
+  align-self: center;
+  border-top-left-radius: 10px;
+  background-color: #F3F3F3;
 }
 
 .message-input {

@@ -18,6 +18,7 @@
       </div>
     </template>
   </main>
+  <script src="script/send-message.js"></script>
   <script>
     var addBtn = document.querySelector('.add-btn');
 
@@ -43,6 +44,10 @@
 
     function addBtnClickHandler() {
       addChatWindow();
+      window.sendMessage({
+        text: "Window #" + ChatWindow.counter + "joined",
+        info: true
+      })
     }
 
     addBtn.addEventListener('click', addBtnClickHandler);
