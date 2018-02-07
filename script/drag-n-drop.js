@@ -1,6 +1,5 @@
 ;(function () {
   var draggableItem;
-  var coords;
   var shiftX;
   var shiftY;
 
@@ -23,11 +22,13 @@
     if ( !evt.target.closest('.draggable') ) return;
 
     draggableItem = evt.target.closest('.draggable');
-    coords = getCoords(draggableItem);
+    
+    var coords = getCoords(draggableItem);
     shiftX = evt.pageX - coords.left;
     shiftY = evt.pageY - coords.top;
 
     draggableItem.style.zIndex = 200;
+    document.body.classList.add('drag');
     moveAt (evt);
 
     document.addEventListener('mousemove', documentMouseMoveHandler);
@@ -41,7 +42,8 @@
   function documentMouseUpHandler () {
     document.removeEventListener('mousemove', documentMouseMoveHandler);
     draggableItem.removeEventListener('mouseup', documentMouseUpHandler);
-    draggableItem.style.zIndex = "";
+    draggableItem.style.zIndex = '';
+    document.body.classList.remove('drag');
   }
 
   function documentMouseDownHandler(evt) {

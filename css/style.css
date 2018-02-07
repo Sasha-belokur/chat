@@ -79,6 +79,10 @@ body {
   }
 }
 
+.drag .chat-iframe {
+  pointer-events: none;
+}
+
 .chat-iframe {
   width: 300px;
   height: 350px;
@@ -204,5 +208,7 @@ background-color: #CCEFF5;
 
 .draggable {
   position: absolute;
+  top: 200px;
+  left: calc(50% - 150px);
   z-index: 100;
 }
