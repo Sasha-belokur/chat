@@ -104,6 +104,7 @@ body {
   background-color: #FCC161;
   border-bottom: 2px solid #F0F2F3;
   cursor: move;
+  transition: background-color 0.7s;
 }
 
 .messages-container {
@@ -211,4 +212,12 @@ background-color: #CCEFF5;
   top: 200px;
   left: calc(50% - 150px);
   z-index: 100;
+}
+
+.draggable.active {
+  z-index: 200;
+}
+
+.draggable.active .chat-header {
+  background-color: #95FC62;
 }

@@ -2,6 +2,7 @@
   var draggableItem;
   var shiftX;
   var shiftY;
+  var activeWindow;
 
   function getCoords (elem) {
     var box = elem.getBoundingClientRect();
@@ -22,12 +23,18 @@
     if ( !evt.target.closest('.draggable') ) return;
 
     draggableItem = evt.target.closest('.draggable');
-    
+    draggableItem.style.zIndex = 200;
+
+    if (activeWindow) {
+      activeWindow.classList.remove('active')
+    }
+
+    activeWindow = draggableItem;
+    activeWindow.classList.add('active');
+
     var coords = getCoords(draggableItem);
     shiftX = evt.pageX - coords.left;
     shiftY = evt.pageY - coords.top;
-
-    draggableItem.style.zIndex = 200;
     document.body.classList.add('drag');
     moveAt (evt);
 
