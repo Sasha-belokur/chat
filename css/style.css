@@ -35,9 +35,10 @@ body {
 .add-btn::before {
   content: "+";
   height: 100px;
+  width: 100px;
   position: absolute;
   top: 0;
-  left: 8px;
+  left: 0;
   font-size: 150px;
   line-height: 100px;
   font-family: "Roboto";
@@ -47,9 +48,10 @@ body {
 .add-btn::after {
   content: "+";
   height: 100px;
+  width: 100px;
   position: absolute;
   top: 0;
-  left: 8px;
+  left: 0;
   font-size: 150px;
   line-height: 100px;
   font-family: "Roboto";
