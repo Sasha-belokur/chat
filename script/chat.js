@@ -22,7 +22,7 @@
     
   }
 
-  function onMesssageHandler (evt) {
+  function MesssageHandler (evt) {
     showMessage({
       text: evt.data.text,
       own: evt.data.own,
@@ -30,10 +30,9 @@
     })
   }
 
-  window.addEventListener('message', onMesssageHandler);
-
+  
   function sendBtnClickHandler () {
-
+    
     if (messageInput.value.length) {
       showMessage({text: messageInput.value, own: true});
       window.sendMessage({text: messageInput.value});
@@ -41,17 +40,18 @@
     }
     
   }
-
+  
   function sendBtnKeyDownHandler (evt) {
-
+    
     if (messageInput.value.length && evt.keyCode === ENTER_KEY_CODE) {
       showMessage({text: messageInput.value, own: true});
       window.sendMessage({text: messageInput.value});
       messageInput.value = "";
     }
-
+    
   }
-
+  
+  window.addEventListener('message', MesssageHandler);
   sendBtn.addEventListener('click', sendBtnClickHandler);
   window.addEventListener('keydown', sendBtnKeyDownHandler);
 })();

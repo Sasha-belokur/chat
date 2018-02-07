@@ -1,21 +1,20 @@
 ;(function () {
   var addBtn = document.querySelector('.add-btn');
+  var chatWindowCounter = 0;
 
-  function ChatWindow() {
+  function initChatWindow() {
     var template = document.querySelector('.chat-window-tempate').content;
     var chatWindow = template.cloneNode(true);
-    ChatWindow.counter++;
+    chatWindowCounter++;
 
-    chatWindow.querySelector('.chat-header').textContent = 'Window #' + ChatWindow.counter;
+    chatWindow.querySelector('.chat-header').textContent = 'Window #' + chatWindowCounter;
     chatWindow.querySelector('.chat-iframe').src = 'chat.html';
 
     return chatWindow;
   } 
 
-  ChatWindow.counter = 0;
-
   function addChatWindow() {
-    var chatWindow = new ChatWindow();
+    var chatWindow = initChatWindow();
 
     document.body.appendChild(chatWindow);
   }
@@ -23,7 +22,7 @@
   function addBtnClickHandler() {
     addChatWindow();
     window.sendMessage({
-      text: "Window #" + ChatWindow.counter + " has joined",
+      text: "Window #" + chatWindowCounter + " has joined",
       info: true
     })
   }
