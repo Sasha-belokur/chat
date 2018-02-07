@@ -13,6 +13,7 @@ body {
   font-family: "Roboto", "Arial", sans-serif;
   font-weight: 400;
   color: #444444;
+  overflow: hidden;
 }
 
 .add-btn {
@@ -62,23 +63,14 @@ body {
   transition: 0s;
 }
 
-.chats-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 1000px;
-  margin: 50px auto;
-}
-
 .chat-window {
+  width: 300px;
+  height: 350px;
   margin-bottom: 25px;
   opacity: 0;
   animation-name: show-msg;
   animation-duration: 0.7s;
   animation-fill-mode: forwards;
-}
-
-.chat-window:not(:nth-child(3n)) {
-  margin-right: 50px;
 }
 
 @keyframes show-chat-window {
@@ -208,4 +200,9 @@ background-color: #CCEFF5;
 
 .send-btn:focus {
   border-color: #69BDCC;
+}
+
+.draggable {
+  position: absolute;
+  z-index: 100;
 }

@@ -15,10 +15,9 @@
   ChatWindow.counter = 0;
 
   function addChatWindow() {
-    var chatsContainer = document.querySelector('.chats-container');
     var chatWindow = new ChatWindow();
 
-    chatsContainer.appendChild(chatWindow);
+    document.body.appendChild(chatWindow);
   }
 
   function addBtnClickHandler() {
