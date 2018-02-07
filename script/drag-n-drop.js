@@ -23,7 +23,6 @@
     if ( !evt.target.closest('.draggable') ) return;
 
     draggableItem = evt.target.closest('.draggable');
-    draggableItem.style.zIndex = 200;
 
     if (activeWindow) {
       activeWindow.classList.remove('active')

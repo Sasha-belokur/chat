@@ -65,10 +65,10 @@ body {
 
 .chat-window {
   width: 300px;
-  height: 350px;
-  margin-bottom: 25px;
+  height: 400px;
   opacity: 0;
-  animation-name: show-msg;
+  box-shadow: 0px 0px 10px 1px #888888;
+  animation-name: show-chat-window;
   animation-duration: 0.7s;
   animation-fill-mode: forwards;
 }
