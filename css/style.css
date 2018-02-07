@@ -40,7 +40,8 @@ body {
   left: 8px;
   font-size: 150px;
   line-height: 100px;
-  color: #FFFFFFFF;
+  font-family: "Roboto";
+  color: #FFFFFF;
 }
 
 .add-btn::after {
@@ -51,7 +52,8 @@ body {
   left: 8px;
   font-size: 150px;
   line-height: 100px;
-  color: #FFFFFFFF;
+  font-family: "Roboto";
+  color: #FFFFFF;
   transform: translateY(-70px);
   opacity: 0;
   transition: all 0.7s;
